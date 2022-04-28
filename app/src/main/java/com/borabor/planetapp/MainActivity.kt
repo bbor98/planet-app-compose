@@ -5,19 +5,27 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.darkColors
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.borabor.planetapp.screen.AuthorScreen
+import com.borabor.planetapp.screen.HomeScreen
 import com.borabor.planetapp.ui.theme.PlanetAppTheme
+import com.borabor.planetapp.util.Screen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             PlanetAppTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
+                MaterialTheme(darkColors()) {
+                    Surface {
+                        val navController = rememberNavController()
+                        SetupNavController(navHostController = navController)
+                    }
                 }
             }
         }
@@ -25,14 +33,12 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    PlanetAppTheme {
-        Greeting("Android")
+fun SetupNavController(navHostController: NavHostController) {
+    NavHost(
+        navController = navHostController,
+        startDestination = Screen.Home.route
+    ) {
+        composable(Screen.Home.route) { HomeScreen(navHostController) }
+        composable(Screen.Author.route) { AuthorScreen(navHostController) }
     }
 }
