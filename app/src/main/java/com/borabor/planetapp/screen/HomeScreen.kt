@@ -59,11 +59,7 @@ fun HomeScreen(navController: NavController) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = {
-                    Text(
-                        text = stringResource(id = R.string.app_name)
-                    )
-                },
+                title = { Text(text = stringResource(id = R.string.app_name)) },
                 actions = {
                     IconButton(onClick = { navController.navigate(Screen.Author.route) }) {
                         Icon(
@@ -312,14 +308,16 @@ fun PlanetItem(planet: Planet, modifier: Modifier) {
                                 fontWeight = FontWeight.Light
                             )
                         }
-                        Spacer(modifier = Modifier.height(8.dp))
+                        Spacer(modifier = Modifier.height(4.dp))
                     }
-                    if (isDescrVisible.collectAsState().value)
+                    if (isDescrVisible.collectAsState().value) {
+                        Spacer(modifier = Modifier.height(4.dp))
                         Text(
                             text = planet.description,
                             fontWeight = FontWeight.Light,
                             style = MaterialTheme.typography.body2
                         )
+                    }
                 }
             }
         }

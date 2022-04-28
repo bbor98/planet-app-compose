@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Planet App</string>
 
+    <string name="visibility">Show</string>
     <string name="sort_by">Sort By</string>
+
     <string name="name">Name</string>
     <string name="surface_area">Surface area</string>
     <string name="surface_temperature">Surface temperature</string>
@@ -9,6 +11,7 @@
     <string name="orbit_period">Orbit period</string>
     <string name="mass">Mass</string>
     <string name="age">Age</string>
+    <string name="description">Description</string>
 
     <string name="ascending">Ascending</string>
     <string name="descending">Descending</string>
@@ -19,12 +22,8 @@
     <string name="days">: %s days</string>
     <string name="kg">: %s trillions kg</string>
     <string name="years_old">: %s years old</string>
+
     <string name="confirm">Confirm</string>
     <string name="cancel">Cancel</string>
     <string name="close">Close</string>
-    <string name="author_info">Made by <b>Bora Bor</b> with <b>Jetpack Compose</b></string>
-
-    <string name="author">Author</string>
-    <string name="visibility">Show</string>
-    <string name="description">Description</string>
 </resources>
