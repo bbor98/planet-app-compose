@@ -6,7 +6,9 @@ import androidx.compose.runtime.Immutable
 data class Author(
     val imageDrawable: Int,
     val name: String,
+    val location: String,
     val title: String,
     val description: String,
-    val gitHubLink:String
+    val githubLink:String,
+    val linkedinLink:String
 )
